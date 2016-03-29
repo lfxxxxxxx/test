@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+	button{
+		padding: 15px;
+	}
+	</style>    
+</head>
+<body>
+	<button onclick="javascript: shake.init();">open</button>
+	<button onclick="javascript: shake.destroy();">close</button>
+	<div class="test">1</div>
+	<script src="shake.js"></script>
+	<script>
+		var shake = new Shake(1000,function(e){
+			document.getElementsByClassName('test')[0].innerHTML=(e.x+"<br>"+e.y+"<br>"+e.z);
+		});
+	</script>
+</body>
+</html>
